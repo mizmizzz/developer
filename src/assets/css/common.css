@@ -1,0 +1,17 @@
+:root{
+  --color-exLightGrey: "#F2F2F2";
+  --color-lightGrey: "#BFBFBF";
+  --color-mediumGrey: "#8C8C8C";
+  --color-grey: "#404040";
+  --color-black: "#0D0D0D";
+  --color-purple: "#8C2A8C";
+  --color-green: "#318C2A";
+  --color-red: "#A6341B";
+  
+  --fs-h1: "64px";
+  --fs-h2: "48px";
+  --fs-h3: "36px";
+  --fs-h4: "24px";
+  --fs-body: "16px";
+  --fs-small: "14px";
+}
