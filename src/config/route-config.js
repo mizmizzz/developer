@@ -1,3 +1,4 @@
+import Calendar from "../pages/calendar/Calendar";
 import Layout from "../pages/layout/Layout";
 import Main from "../pages/main/Main";
 
@@ -11,7 +12,11 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Main/>
-      }
+      },
+      {
+        path:'/calendar',
+        element:<Calendar/>
+      },
     ]
   }
 ])

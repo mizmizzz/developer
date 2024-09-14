@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.scss";
 import ProfileInfoList from "./ProfileInfoList";
+import profileImgUrl from '../../../../assets/images/profile/profile.png'
 
 const Profile = () => {
   const [activeIndex, setActiveIndex] = useState(2);
@@ -59,7 +60,7 @@ const Profile = () => {
           />
         ))}
       </ul>
-      <p className={styles.img}></p>
+      <p className={styles.img}><img src={profileImgUrl} alt="프로필 이미지"/></p>
     </div>
   );
 };

@@ -19,9 +19,20 @@
     &:last-child{
       border-bottom: none;
     }
-    .img{
-      height: 500px;
-      overflow-y: scroll;
+    .video{
+      // height: 500px;
+      // overflow-y: scroll;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    border-bottom: solid 1px var(--color-grey);
+    border-left: solid 1px var(--color-grey);
+    padding: 40px;
+
+      video{
+        width: 500px;
+      }
     }
     .desBox{
       border-bottom: solid 1px var(--color-grey);
@@ -37,6 +48,9 @@
       }
       &:last-child{
         border-bottom: none;
+        .desList{
+          padding-bottom: 100px;
+        }
       }
       h3{
         font-size: 18px;
@@ -78,6 +92,10 @@
           &.notion::before{
             background-image: url(../../../../assets/images/icon/c-notion-logo.svg);
           }
+       
+          &.down::before{
+            display: none;
+          }
         }
         .sub{
           // font-size: var(--fs-small);
@@ -87,7 +105,7 @@
         &.skills{
           display: flex;
           flex-wrap: wrap;
-          padding-top: 12px;
+          padding-bottom: 12px;
 
           >li{
             padding:2px 6px;
@@ -97,9 +115,14 @@
             border-radius: 4px;
             font-size: var(--fs-body);
             margin-right: 8px;
-            margin-top: 8px;
+            // margin-top: 8px;
+            
             &::before{
               display: none;
+            }
+            &:last-child{
+          margin-bottom: 8px;
+
             }
           }
         }

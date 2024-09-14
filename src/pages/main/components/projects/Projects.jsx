@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./Projects.module.scss";
 import projectUrl from "../../../../assets/projects/gwating.pdf";
-
+import videoUrl from '../../../../assets/images/video/final.mp4'
 const Projects = () => {
   return (
     <div className={styles.projectsWrap}>
       <h2><span>Projects</span></h2>
       <div className={styles.projectBox}>
-        {/* <p className={styles.img}>
-          </p> */}
+        <p className={styles.video}>
+          <video src={videoUrl} type="video/mp4" muted controls></video>
+          </p>
         <div className={`${styles.desBox} ${styles.half}`}>
           <h3>title</h3>
           <p className={styles.desList}>과팅</p>
@@ -32,6 +33,12 @@ const Projects = () => {
             >
               https://www.notion.so/5658f2d2fbd54e11a2b3525bfd048bce?pvs=4
             </a>
+          </p>
+        </div>
+        <div className={`${styles.desBox}`}>
+          <h3>file</h3>
+          <p className={styles.desList}>
+            <a className={styles.down} href="/gwating.pdf" download={""}><span class="lnr lnr-link"></span> gwating.pdf</a>
           </p>
         </div>
 

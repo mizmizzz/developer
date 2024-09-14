@@ -30,7 +30,7 @@
     p{
       display: flex;
       align-items: center;
-      padding: 10px 10px 0px;
+      padding: 10px 0 0px;
 
 
       >span{
@@ -43,6 +43,9 @@
   font-weight: 400;
 
       }
+    }
+    &:nth-child(2n){
+      padding-left: 0;
     }
     &:nth-child(2n)::after{
       display: none;

@@ -7,7 +7,7 @@
     width: calc(100% - 500px);
     height: 100%;
     background-color: var(--color-wh);
-  padding-top: 100px;
+  padding-top: 60px;
 
 
     > li {
@@ -25,6 +25,11 @@
           max-width: 12px;
           margin-left: 6px;
           opacity: 1;
+          animation: rotateInfinite 4s linear infinite;
+          @keyframes rotateInfinite {
+            0%{rotate: 0;}
+            100%{rotate: 360deg;}
+          }
 
         }
         .text{
@@ -105,7 +110,12 @@
     width: 500px;
     border-left: solid 1px var(--color-grey);
     background-color: #fff;
-  padding-top: 100px;
-
+  padding: 100px 40px 40px;
+text-align: center;
+    img{
+      max-width: 100%;
+      max-height: 100%;
+      
+    }
   }
 }

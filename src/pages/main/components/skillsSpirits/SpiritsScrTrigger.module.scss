@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Moirai+One&display=swap');
+.triggerWrap {
+  width: 100%;
+  // font-size: 80px;
+  font-size: 160px;
+  padding: 20px 0 40px;
+  overflow: hidden;
+  white-space: nowrap; // ul 내부의 li 요소가 한 줄에 나열되도록 설정
+  position: relative; // relative positioning for pinning
+  color: var(--color-wh);
+  // color: #fff;
+  // font-weight: 300;
+  ul {
+    display: flex;
+    // align-items: flex-end;
+
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+    padding: 0 100px;
+    // margin-left: 200px;
+  }
+
+  li {
+    width: auto;
+    display: inline-block; // li 요소가 줄 바꿈되지 않도록 설정
+    // font-weight: 600;
+    &:nth-child(2n + 1) {
+      font-style: italic;
+    }
+    // &::after{
+    //   content: '*';
+    //   display: inline-block;
+    //   font-family: "Moirai One", system-ui;
+    //   // rotate: 90deg;
+    //   margin: 0 10px;
+    //   // text-indent: 0;
+    //   transform: translateY(60px);
+    //   font-size: 300px;
+    // }
+  }
+}
