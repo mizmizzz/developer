@@ -1,0 +1,28 @@
+.spiritsSwiperWrap {
+  // width: calc(100% - 124px);
+  width: 100%;
+  // background-color: var(--color-grey);
+  .spiritsSwiper {
+    font-size: 172px;
+    // width: 100%;
+    .swiper-wrapper{
+      transition-timing-function: linear;
+      width: fit-content;
+    }
+    .swiper-slide {
+      // width: fit-content!important;
+      // letter-spacing: -1px;
+      width: auto;
+      // font-weight: 300;
+      color: var(--color-wh);
+      transition: .6s;
+      &-active {
+
+      }
+      &:nth-child(2n + 1) {
+        font-style: italic;
+        // font-weight: 100;
+      }
+    }
+  }
+}
