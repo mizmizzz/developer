@@ -23,7 +23,7 @@
   "scripts": {
       "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "homepage": "https://mizmizzz.github.io/planner-app/"
+    "homepage": "https://mizmizzz.github.io/"
   },
   "eslintConfig": {
     "extends": [
