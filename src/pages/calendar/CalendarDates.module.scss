@@ -1,0 +1,42 @@
+
+.month{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.date{
+  width: calc(100% / 7);
+  border-right: solid 1px var(--color-grey);
+  border-top: solid 1px var(--color-grey);
+  min-height: 78px;
+  &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+    border-top: none;
+  }
+  &:nth-child(7n){
+    border-right: none;
+  }
+  &.isAnotherMonth{
+    background-color: var(--color-wh);
+  }
+  h2{
+    font-size: var(--fs-body);
+    padding: 16px 20px;
+    text-align: right;
+  }
+  .contentList{
+    padding: 0 12px 26px;
+    >li{
+      padding: 4px 8px;
+      border: solid 1px var(--color-grey);
+      border-radius: 8px;
+      font-size: var(--fs-body);
+      margin-bottom: 8px;
+      text-align: right;
+      width: fit-content;
+      margin-left: auto;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

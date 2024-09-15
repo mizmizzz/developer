@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import CalendarDates from './components/CalendarDates';
+import CalendarDates from './CalendarDates';
 import styles from './Calendar.module.scss';
+import CalendarAside from './components/CalendarAside';
+import CalendarHead from './components/CalendarHead';
 const Calendar = () => {
   const [commitData, setCommitData] = useState([]);
 
@@ -66,7 +68,14 @@ const Calendar = () => {
   };
   return (
     <div className={styles.calendarWrap}>
-      <CalendarDates/>
+      <div className={styles.calendarInner}>
+        <CalendarHead/>
+        <div className={styles.datesWrap}>
+        <CalendarDates/>
+
+        </div>
+      </div>
+      <CalendarAside/>
     </div>
   );
 };
