@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/planner-app/static/css/main.05573273.css",
-    "main.js": "/planner-app/static/js/main.a5403b8f.js",
+    "main.js": "/planner-app/static/js/main.518fc2da.js",
     "static/js/453.a7e882e1.chunk.js": "/planner-app/static/js/453.a7e882e1.chunk.js",
     "static/media/final.mp4": "/planner-app/static/media/final.e6b7cd10843d9670c1cc.mp4",
     "static/media/gwating.pdf": "/planner-app/static/media/gwating.11fc137bc3c016a5e859.pdf",
@@ -26,11 +26,11 @@
     "static/media/logo.svg": "/planner-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/planner-app/index.html",
     "main.05573273.css.map": "/planner-app/static/css/main.05573273.css.map",
-    "main.a5403b8f.js.map": "/planner-app/static/js/main.a5403b8f.js.map",
+    "main.518fc2da.js.map": "/planner-app/static/js/main.518fc2da.js.map",
     "453.a7e882e1.chunk.js.map": "/planner-app/static/js/453.a7e882e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05573273.css",
-    "static/js/main.a5403b8f.js"
+    "static/js/main.518fc2da.js"
   ]
 }
