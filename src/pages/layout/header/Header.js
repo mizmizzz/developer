@@ -11,7 +11,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.inner}>
         <p className={styles.logo}>
-          <NavLink to="/" />
+          {/* <NavLink to="/" /> */}
         </p>
         <button className={active ? `${styles.isActive} ${styles.navBtn}` : `${styles.navBtn}`} onClick={onClickHandler}>
           <span className={styles.path}></span>

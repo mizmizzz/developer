@@ -8,7 +8,7 @@ const SkillsSpirits = () => {
   return (
     <div className={styles.wrap}>
       <div className={styles.skillsWrap}>
-      <h2>Skills</h2>
+      <h2><span>Skills</span></h2>
 
       <SkillsSlide/>
 

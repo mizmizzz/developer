@@ -5,14 +5,12 @@
   border-top: solid 1px var(--color-grey);
   display: flex;
   justify-content: right;
-  // @include borderAniRowTop;
   font-size: var(--fs-body);
 
   >p{
     padding: 0 40px;
   
     line-height: 60px;
-    // @include borderAniColRight;
   border-left: solid 1px var(--color-grey);
 
     &:first-child{
@@ -20,6 +18,36 @@
     }
     a{
       text-decoration: underline;
+    }
+  }
+}
+@media (max-width:768px){
+  .footer{
+ 
+    flex-direction: column;
+    >p{
+      border-bottom: solid 1px var(--color-grey);
+      border-left: none;
+      text-align: right;
+      &:last-child{
+      border-bottom: none;
+
+      }
+      a{
+      }
+    }
+  }
+}
+@media (max-width:500px){
+  .footer{
+    font-size: var(--fs-small);
+    >p{
+      padding: 0 20px;
+      &:last-child{
+
+      }
+      a{
+      }
     }
   }
 }
