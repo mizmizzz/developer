@@ -66,7 +66,7 @@ const Projects = () => {
           </ul>
         </div>
         <div className={`${styles.desBox}`}>
-          <h3>skills</h3>
+          <h3>services</h3>
           <ul className={styles.desList}>
             <li>
               대학 이메일 인증을 완료한 대학생들을 대상으로 M:M 미팅 서비스 제공

@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import CalendarDay from "./CalendarDay";
 
-const CalendarMonth = ({ styles, month, isFirst, isLast, id, commitData, setCommitMessage }) => {
+const CalendarMonth = ({
+  styles,
+  month,
+  isFirst,
+  isLast,
+  id,
+  commitData,
+  setCommitMessage,
+}) => {
   const [days, setDays] = useState([]);
 
   useEffect(() => {
@@ -17,14 +25,18 @@ const CalendarMonth = ({ styles, month, isFirst, isLast, id, commitData, setComm
 
     if (isFirst) {
       for (let i = firstDayOfWeek - 1; i >= 0; i--) {
-        const prevDate = new Date(year, monthIndex - 1, lastDateOfPrevMonth - i);
+        const prevDate = new Date(
+          year,
+          monthIndex - 1,
+          lastDateOfPrevMonth - i
+        );
         daysInMonth.push({
           year: prevDate.getFullYear(),
           month: prevDate.getMonth() + 1,
           date: prevDate.getDate(),
           day: prevDate.getDay(),
           isCurrentMonth: false,
-          id // 고유 id
+          id, // 고유 id
         });
       }
     }
@@ -37,7 +49,7 @@ const CalendarMonth = ({ styles, month, isFirst, isLast, id, commitData, setComm
         date: currentDate.getDate(),
         day: currentDate.getDay(),
         isCurrentMonth: true,
-        id // 고유 id
+        id, // 고유 id
       });
     }
 
@@ -54,7 +66,7 @@ const CalendarMonth = ({ styles, month, isFirst, isLast, id, commitData, setComm
           date: nextDate.getDate(),
           day: nextDate.getDay(),
           isCurrentMonth: false,
-          id // 고유 id
+          id, // 고유 id
         });
       }
     }
@@ -65,7 +77,14 @@ const CalendarMonth = ({ styles, month, isFirst, isLast, id, commitData, setComm
   return (
     <>
       {days.map((day, index) => (
-        <CalendarDay key={index} styles={styles} day={day} id={day.id} commitData={commitData} setCommitMessage={setCommitMessage}/>
+        <CalendarDay
+          key={index}
+          styles={styles}
+          day={day}
+          id={day.id}
+          commitData={commitData}
+          setCommitMessage={setCommitMessage}
+        />
       ))}
     </>
   );

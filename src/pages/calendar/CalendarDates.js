@@ -3,7 +3,7 @@ import 'react-calendar/dist/Calendar.css';
 import styles from './CalendarDates.module.scss';
 import CalendarMonth from './components/CalendarMonth';
 
-const CalendarDates = ({setNowDate, commitData, setCommitMessage}) => {
+const CalendarDates = ({ setNowDate, commitData, setCommitMessage }) => {
   const [months, setMonths] = useState([]);
   const [mostVisibleMonth, setMostVisibleMonth] = useState(null);
   const containerRef = useRef(null);
@@ -12,16 +12,43 @@ const CalendarDates = ({setNowDate, commitData, setCommitMessage}) => {
     const currentDate = new Date();
     const initialMonths = [];
 
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 2; i++) {
       initialMonths.push(new Date(currentDate.getFullYear(), currentDate.getMonth() - i));
     }
     setMonths(initialMonths.reverse());
+
+    // setNowDate({
+    //   year:months[0].year,
+    //   month:months[0].month,
+    //   date: months[0].date
+    // })
   }, []);
+
+  // useEffect(() => {
+  //   const scrollToCurrentMonth = () => {
+  //     if (!containerRef.current) return;
+
+  //     const currentDate = new Date();
+  //     const currentMonthIndex = months.findIndex(month =>
+  //       month.getFullYear() === currentDate.getFullYear() && month.getMonth() === currentDate.getMonth()
+  //     );
+
+  //     if (currentMonthIndex !== -1) {
+  //       const currentMonthElement = document.getElementById(`month-${currentMonthIndex}`);
+  //       if (currentMonthElement) {
+  //         // Delay the scroll adjustment to ensure elements are fully rendered
+  //         setTimeout(() => {
+  //           containerRef.current.scrollTop = currentMonthElement.offsetTop;
+  //         }, 100);
+  //       }
+  //     }
+  //   };
+
+  //   scrollToCurrentMonth();
+  // }, [months]);
 
   useEffect(() => {
     const handleScroll = () => {
-      // console.log('scr');
-      
       if (!containerRef.current) return;
 
       const containerRect = containerRef.current.getBoundingClientRect();
@@ -51,38 +78,34 @@ const CalendarDates = ({setNowDate, commitData, setCommitMessage}) => {
       setMostVisibleMonth(mostVisible);
     };
 
-    // 컨테이너 내부의 스크롤 이벤트 핸들링
     const containerElement = containerRef.current;
     containerElement.addEventListener('scroll', handleScroll);
-    handleScroll(); // 초기 로드 시에도 호출
+    handleScroll(); // Initial call
 
     return () => {
       containerElement.removeEventListener('scroll', handleScroll);
     };
   }, [months]);
 
-  useEffect(()=>{
-    if(mostVisibleMonth){
+  useEffect(() => {
+    if (mostVisibleMonth) {
       setNowDate({
-        year:mostVisibleMonth.getFullYear(),
-        month:mostVisibleMonth.getMonth()
-      })
+        year: mostVisibleMonth.getFullYear(),
+        month: mostVisibleMonth.getMonth(),
+      });
     } else {
-      setNowDate({})
+      setNowDate({});
     }
-  },[mostVisibleMonth])
-  console.log(mostVisibleMonth ? mostVisibleMonth.toLocaleString('default', { month: 'long' }) + ' ' + mostVisibleMonth.getFullYear() : null);
+  }, [mostVisibleMonth]);
+
   const messegeClickHandler = (e) => {
-    // 클릭된 요소가 li인지 확인
     const targetElement = e.target;
-  
     if (targetElement.tagName === 'LI') {
       setCommitMessage(targetElement.innerText);
     } else {
       setCommitMessage(null);
     }
   };
-  
 
   return (
     <div ref={containerRef} className={styles.datesWrap} onClick={messegeClickHandler}>
@@ -91,19 +114,18 @@ const CalendarDates = ({setNowDate, commitData, setCommitMessage}) => {
         const isLast = index === months.length - 1;
 
         return (
-          <CalendarMonth 
-            key={index} 
-            styles={styles} 
-            month={month} 
-            isFirst={isFirst} 
-            isLast={isLast} 
+          <CalendarMonth
+            key={index}
+            styles={styles}
+            month={month}
+            isFirst={isFirst}
+            isLast={isLast}
             id={`month-${index}`}
             commitData={commitData}
             setCommitMessage={setCommitMessage}
           />
         );
       })}
-    
     </div>
   );
 };

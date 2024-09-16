@@ -15,7 +15,7 @@
   width: calc(100% / 7);
   border-right: solid 1px var(--color-grey);
   border-top: solid 1px var(--color-grey);
-  min-height: 82px;
+  min-height: 100px;
   &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
     border-top: none;
   }
@@ -53,6 +53,152 @@
       cursor: pointer;
       &:last-child{
         margin-bottom: 0;
+      }
+    }
+  }
+}
+@media (max-width:1200px){
+  .datesWrap{
+ 
+  }
+  .month{
+
+  }
+  .date{
+   
+    &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+    }
+    &:nth-child(7n){
+    }
+    &.isAnotherMonth{
+    }
+    h2{
+      padding: 10px 20px;
+    }
+    .contentList{
+ padding: 0 10px 26px;
+      >li{
+        font-size: var(--fs-small);
+        padding: 3px 6px;
+        &:last-child{
+        }
+      }
+    }
+  }
+}
+@media (max-width:1024px){
+  .datesWrap{
+ 
+  }
+  .month{
+
+  }
+  .date{
+   
+    &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+    }
+    &:nth-child(7n){
+    }
+    &.isAnotherMonth{
+    }
+    h2{
+    }
+    .contentList{
+      >li{
+   
+        &:last-child{
+        }
+      }
+    }
+  }
+}
+@media (max-width:768px){
+  .datesWrap{
+    height: calc(100% - 100px);
+  }
+  .month{
+
+  }
+  .date{
+   
+    &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+    }
+    &:nth-child(7n){
+    }
+    &.isAnotherMonth{
+    }
+    h2{
+      font-size: var(--fs-small);
+    }
+    .contentList{
+      max-height:none;
+      >li{
+        font-size: 12px;
+        padding: 2px 4px;
+      -webkit-line-clamp: 1; // 원하는 라인수
+        color: transparent;
+        width: 46px;
+        border-radius: 4px;
+        position: relative;
+        margin-bottom: 4px;
+        &::after{
+          content: 'commit';
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: var(--color-grey);
+          width: 100%;
+          text-align: center;
+        }
+        &:last-child{
+        }
+      }
+    }
+  }
+}
+@media (max-width:500px){
+  .datesWrap{
+  }
+  .month{
+  }
+  .date{
+   
+    &:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4),&:nth-child(5),&:nth-child(6),&:nth-child(7){
+    }
+    &:nth-child(7n){
+    }
+    &.isAnotherMonth{
+    }
+    h2{
+      padding: 6px;
+      font-size: 12px;
+    }
+    .contentList{
+      padding: 0 3px 12px;
+      >li{
+        font-size: 12px;
+        padding: 2px 4px;
+      -webkit-line-clamp: 1; // 원하는 라인수
+        color: transparent;
+        width: 100%;
+        border-radius: 4px;
+        position: relative;
+        margin-bottom: 4px;
+        &::after{
+          content: 'commit';
+          display: inline-block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: var(--color-grey);
+          width: 100%;
+          text-align: center;
+        }
+        &:last-child{
+        }
       }
     }
   }

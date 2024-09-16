@@ -1,7 +1,7 @@
 import React from "react";
 
 const CalendarDay = ({ styles, day, id, commitData, setCommitMessage }) => {
-  console.log('day',day);
+  // console.log('day',day);
 
 // 해당 날짜에 대한 커밋을 필터링
 const commitsOnDate = commitData.filter(commit =>
