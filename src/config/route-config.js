@@ -4,6 +4,7 @@ import Main from "../pages/main/Main";
 
 const { createBrowserRouter } = require("react-router-dom");
 
+
 const router = createBrowserRouter([
   {
     path:'/',
@@ -18,6 +19,9 @@ const router = createBrowserRouter([
         element:<Calendar/>
       },
     ]
+  },
+  {
+    basename: "/planner-app"  // GitHub Pages에서 사용하는 repository name
   }
 ])
 export default router;

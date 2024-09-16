@@ -20,14 +20,13 @@
     "swiper": "^11.1.14",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://mizmizzz.github.io/planner-app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://mizmizzz.github.io/planner-app/",
-
   "eslintConfig": {
     "extends": [
       "react-app",
