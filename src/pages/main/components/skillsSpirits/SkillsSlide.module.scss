@@ -101,11 +101,15 @@
       h3{
         font-size: var(--fs-body);
         font-weight: 400;
+        
       }
       p{
+        padding-top: 6px;
+
         >span{
     font-size: var(--fs-small);
-  
+          margin-top: 4px;
+          padding-bottom: 3px;
         }
       }
       &:nth-child(2n){

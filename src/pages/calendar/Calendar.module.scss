@@ -6,15 +6,6 @@
     width: calc(100% - 250px);
     border-right: solid 1px var(--color-grey);
     height: 100%;
-    // display: flex;
-    // align-items: flex-end;
-    .datesWrap{
-      width: 100%;
-      height: calc(100% - 120px);
-      overflow-y: scroll;
-    
-      display: flex;
-      flex-wrap: wrap;
-    }
+  
   }
 }

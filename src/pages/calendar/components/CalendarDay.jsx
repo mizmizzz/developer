@@ -1,28 +1,37 @@
-import React from 'react';
+import React from "react";
 
-const CalendarDay = ({ styles, day }) => {
-  
-  console.log(day);
-  
-  // const formatDate = (date) => {
-  //   const year = date.getFullYear();
-  //   const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1
-  //   const day = String(date.getDate()).padStart(2, '0');
-  //   return `${year}.${month}.${day}`;
-  // };
+const CalendarDay = ({ styles, day, id, commitData, setCommitMessage }) => {
+  console.log('day',day);
+
+// 해당 날짜에 대한 커밋을 필터링
+const commitsOnDate = commitData.filter(commit =>
+  commit.date.year === day.year &&
+  commit.date.month === day.month &&
+  commit.date.date === day.date
+);
+
+
   return (
-    <div className={day.isCurrentMonth? `${styles.date}` : `${styles.date} ${styles.isAnotherMonth}`}>
-      
-      {day.isCurrentMonth && (
+    <div
+      id={id}
+      className={
+        day.isCurrentMonth
+          ? `${styles.date}`
+          : `${styles.date} ${styles.isAnotherMonth}`
+      }
+    >
+    {day.isCurrentMonth && (
         <>
           <h2>{day.date}</h2>
-          <ul className={styles.contentList}>
-            <li>메모 1</li>
-            <li>메모메모 22메메메메모모모모</li>
-          </ul>
+          {commitsOnDate.length > 0 && (
+            <ul className={styles.contentList}>
+              {commitsOnDate.map((commit, index) => (
+                <li key={index}>{commit.message}</li>
+              ))}
+            </ul>
+          )}
         </>
-      
-        )}
+      )}
     </div>
   );
 };

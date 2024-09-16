@@ -499,6 +499,7 @@
         }
         &:last-child{
           .desList{
+            padding-bottom: 40px;
           }
         }
        
@@ -527,6 +528,8 @@
             >li{
             font-size: var(--fs-small);
 padding: 0 4px;
+margin-right: 6px;
+
               &::before{
               }
               &:last-child{

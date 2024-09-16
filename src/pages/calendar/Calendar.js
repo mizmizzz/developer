@@ -5,7 +5,10 @@ import CalendarAside from './components/CalendarAside';
 import CalendarHead from './components/CalendarHead';
 const Calendar = () => {
   const [commitData, setCommitData] = useState([]);
-
+  const [nowDate,setNowDate] = useState({})
+  const [commitMessage, setCommitMessage] = useState();
+  // console.log(nowDate);
+  
   useEffect(() => {
     const fetchCommits = async () => {
       // meeting_frontend 레포지토리 커밋 데이터 가져오기
@@ -16,23 +19,23 @@ const Calendar = () => {
       const backendCommits = await fetch('https://api.github.com/repos/3on3/meeting_backend/commits')
         .then(res => res.json());
 
-      // 날짜를 yyyy.mm.dd 형식으로 변환하는 함수
-      const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1 필요
-        const day = String(date.getDate()).padStart(2, '0');
-        return `${year}.${month}.${day}`;
-      };
+        const parseDate = (dateString) => {
+          const date = new Date(dateString);
+          return {
+            year: date.getFullYear(),
+            month: date.getMonth() + 1, // 1월은 0, 2월은 1 ...
+            date: date.getDate()
+          };
+        };
 
       // 각 레포지토리에서 커밋 날짜와 메시지 추출, 날짜 형식 변환
       const frontendData = frontendCommits.map(commit => ({
-        date: formatDate(commit.commit.author.date), // yyyy.mm.dd 형식으로 변환
+        date: parseDate(commit.commit.author.date), // yyyy.mm.dd 형식으로 변환
         message: commit.commit.message
       }));
 
       const backendData = backendCommits.map(commit => ({
-        date: formatDate(commit.commit.author.date), // yyyy.mm.dd 형식으로 변환
+        date: parseDate(commit.commit.author.date), // yyyy.mm.dd 형식으로 변환
         message: commit.commit.message
       }));
 
@@ -44,38 +47,15 @@ const Calendar = () => {
     fetchCommits();
   }, []);
 
-  console.log(commitData);
   
-  // 커밋이 있는 날짜에 메시지를 표시하는 함수
-  const tileContent = ({ date, view }) => {
-    if (view === 'month') {
-      const formattedDate = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')}`;
-      const commitsOnDate = commitData.filter(commit => commit.date === formattedDate);
-
-      if (commitsOnDate.length > 0) {
-        return (
-          <ul>
-            {commitsOnDate.map((commit, index) => (
-              <li key={index} style={{ fontSize: '10px', backgroundColor: '#f0f0f0', padding: '2px' }}>
-                {commit.message}
-              </li>
-            ))}
-          </ul>
-        );
-      }
-    }
-    return null;
-  };
+  
   return (
     <div className={styles.calendarWrap}>
       <div className={styles.calendarInner}>
         <CalendarHead/>
-        <div className={styles.datesWrap}>
-        <CalendarDates/>
-
-        </div>
+        <CalendarDates setNowDate={setNowDate} commitData={commitData} setCommitMessage={setCommitMessage}/>
       </div>
-      <CalendarAside/>
+      <CalendarAside nowDate={nowDate} commitMessage={commitMessage}/>
     </div>
   );
 };

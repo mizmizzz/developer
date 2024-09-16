@@ -15,6 +15,31 @@
   .inner {
     height: calc(100% - 120px);
     padding: 40px 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: right;
+    
+    .content {
+      text-align: right;
+      font-size: var(--fs-body);
+      word-break: keep-all;
+      animation: fadeIn 0.4s ease-out forwards;
+
+      &.fadeIn{
+        animation: fadeIn 0.4s ease-out forwards;
+
+      }
+      @keyframes fadeIn {
+        0% {
+          transform: translateY(5px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 .head {
@@ -31,7 +56,7 @@
     text-align: right;
     padding-top: 60px;
 
-    &:last-child{
+    &:last-child {
       border-right: none;
     }
   }

@@ -19,9 +19,9 @@ const Header = () => {
         </button>
       </div>
       <nav className={active ? `${styles.navi} ${styles.isActive}` : `${styles.navi}`}>
-        <NavLink to="/"className={({ isActive }) => isActive && styles.active}>Introduce</NavLink>
-        <NavLink to="/calendar" className={({ isActive }) => isActive && styles.active}>calendar</NavLink>
-        <NavLink to="/dummy" className={({ isActive }) => isActive && styles.active }>dummy</NavLink>
+        <NavLink to="/"className={({ isActive }) => isActive && styles.active} onClick={onClickHandler}>Introduce</NavLink>
+        <NavLink to="/calendar" className={({ isActive }) => isActive && styles.active} onClick={onClickHandler}>calendar</NavLink>
+        <NavLink to="/dummy" className={({ isActive }) => isActive && styles.active } onClick={onClickHandler}>dummy</NavLink>
       </nav>
     </header>
   );

@@ -21,7 +21,7 @@ const SpiritsScrTrigger = () => {
         start: 'center bottom', // 컨테이너가 화면 하단에 도달했을 때 시작
         end: 'center top', // 컨테이너가 화면 상단에 도달했을 때 종료
         scrub: true,
-        // pin: true, // 컨테이너가 고정됨
+        invalidateOnRefresh: true, 
         anticipatePin: 1, // 페이지 로딩 시 컨테이너의 위치를 더 잘 계산
       },
     });
@@ -34,7 +34,7 @@ const SpiritsScrTrigger = () => {
         start: 'bottom center', // 컨테이너가 화면 하단에 도달했을 때 시작
         end: 'top top', // 컨테이너가 화면 상단에 도달했을 때 종료
         scrub: 1,
-        // pin: true, // 컨테이너가 고정됨
+        invalidateOnRefresh: true, 
         anticipatePin: 1, // 페이지 로딩 시 컨테이너의 위치를 더 잘 계산
       },
     });
