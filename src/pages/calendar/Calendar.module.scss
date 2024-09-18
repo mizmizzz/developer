@@ -1,6 +1,5 @@
 .calendarWrap{
   display: flex;
-  // padding-top: 60px;
   height: calc(100vh - 60px);
   .calendarInner{
     width: calc(100% - 250px);
@@ -11,11 +10,8 @@
 }
 @media (max-width:1024px) {
   .calendarWrap{
-  
     .calendarInner{
       width: calc(100% - 180px);
-
-    
     }
   }
 }
@@ -27,8 +23,6 @@
       width: 100%;
       border-right: none;
       height: calc(100% - 121px);
-      // padding-bottom: 141px;
-    
     }
   }
 }
