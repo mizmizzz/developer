@@ -20,7 +20,7 @@ const router = createBrowserRouter(
     }
   ],
   {
-    basename: "/planner-app"  // GitHub Pages에서 사용하는 repository name
+    basename: "/developer"  // GitHub Pages에서 사용하는 repository name
   }
 );
 
