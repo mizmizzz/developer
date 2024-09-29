@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/developer/static/css/main.fe01582f.css",
+    "main.css": "/developer/static/css/main.a68e98eb.css",
     "main.js": "/developer/static/js/main.97847acd.js",
     "static/js/453.a7e882e1.chunk.js": "/developer/static/js/453.a7e882e1.chunk.js",
     "static/media/final.mp4": "/developer/static/media/final.e6b7cd10843d9670c1cc.mp4",
@@ -25,12 +25,12 @@
     "static/media/c-gwating-favicon.svg": "/developer/static/media/c-gwating-favicon.19d2f21cfd44631d291f.svg",
     "static/media/logo.svg": "/developer/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/developer/index.html",
-    "main.fe01582f.css.map": "/developer/static/css/main.fe01582f.css.map",
+    "main.a68e98eb.css.map": "/developer/static/css/main.a68e98eb.css.map",
     "main.97847acd.js.map": "/developer/static/js/main.97847acd.js.map",
     "453.a7e882e1.chunk.js.map": "/developer/static/js/453.a7e882e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe01582f.css",
+    "static/css/main.a68e98eb.css",
     "static/js/main.97847acd.js"
   ]
 }
