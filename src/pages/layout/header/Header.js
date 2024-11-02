@@ -20,8 +20,8 @@ const Header = () => {
       </div>
       <nav className={active ? `${styles.navi} ${styles.isActive}` : `${styles.navi}`}>
         <NavLink to="/"className={({ isActive }) => isActive && styles.active} onClick={onClickHandler}>Introduce</NavLink>
-        <NavLink to="/calendar" className={({ isActive }) => isActive && styles.active} onClick={onClickHandler}>calendar</NavLink>
-        <NavLink to="/dummy" className={({ isActive }) => isActive && styles.active } onClick={onClickHandler}>dummy</NavLink>
+        <NavLink to="/project" className={({ isActive }) => isActive && styles.active } onClick={onClickHandler}>Project</NavLink>
+        <NavLink to="/calendar" className={({ isActive }) => isActive && styles.active} onClick={onClickHandler}>Calendar</NavLink>
       </nav>
     </header>
   );

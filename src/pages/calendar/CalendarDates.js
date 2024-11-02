@@ -15,8 +15,15 @@ const CalendarDates = ({ setNowDate, commitData, setCommitMessage }) => {
     for (let i = 0; i < 2; i++) {
       initialMonths.push(new Date(currentDate.getFullYear(), currentDate.getMonth() - i));
     }
-    setMonths(initialMonths.reverse());
 
+    setMonths(initialMonths.reverse());
+ if (months.length > 0) {
+    setNowDate({
+      year: reversedMonths[0].getFullYear(),
+      month: reversedMonths[0].getMonth(),
+      date: reversedMonths[0].getDate(),
+    });
+  }
     // setNowDate({
     //   year:months[0].year,
     //   month:months[0].month,

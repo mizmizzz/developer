@@ -15,11 +15,13 @@
   --fs-body: 16px;
   --fs-small: 14px;
 }
-.mo_br_768{
+
+
+br.mo_br_768{
   display: none;
 }
 @media (max-width:768px){
-  .mo_br_768{
+  br.mo_br_768{
     display: block;
   }
 }

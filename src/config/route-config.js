@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Calendar from "../pages/calendar/Calendar";
 import Layout from "../pages/layout/Layout";
 import Main from "../pages/main/Main";
+import Project from "../pages/project/Project";
 const router = createBrowserRouter(
   [
     {
@@ -13,9 +14,13 @@ const router = createBrowserRouter(
           element: <Main />
         },
         {
+          path: '/project',
+          element: <Project />
+        },
+        {
           path: '/calendar',
           element: <Calendar />
-        }
+        },
       ]
     }
   ],
